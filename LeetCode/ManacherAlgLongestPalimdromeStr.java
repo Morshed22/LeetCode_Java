@@ -4,14 +4,14 @@ public class ManacherAlgLongestPalimdromeStr {
     // the # are interleaved to avoid even/odd-length palindromes uniformly
     // $ and @ are prepended and appended to each end to avoid bounds checking
     private char[] preprocess(String s) {
-        char[] t = new char[s.length()*2 + 3];
+        char[] t = new char[s.length() * 2 + 3];
         t[0] = '$';
-        t[s.length()*2 + 2] = '@';
+        t[s.length() * 2 + 2] = '@';
         for (int i = 0; i < s.length(); i++) {
-            t[2*i + 1] = '#';
-            t[2*i + 2] = s.charAt(i);
+            t[2 * i + 1] = '#';
+            t[2 * i + 2] = s.charAt(i);
         }
-        t[s.length()*2 + 1] = '#';
+        t[s.length() * 2 + 1] = '#';
         return t;
     }
 
@@ -20,7 +20,7 @@ public class ManacherAlgLongestPalimdromeStr {
         int[] padindromeArray = new int[charArray.length];
 
         int center = 0, right = 0;
-        for (int i = 1; i < charArray.length-1; i++) {
+        for (int i = 1; i < charArray.length - 1; i++) {
             int mirror = 2 * center - i;
 
             if (right > i) {

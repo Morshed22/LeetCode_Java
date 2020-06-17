@@ -8,6 +8,7 @@ public class LongestSubstring {
         long elapsedTime = end - start;
         System.out.println(elapsedTime);
     }
+
     public static int lengthOfLongestSubstring(String s) {
         int[] cache = new int[256];
         Arrays.fill(cache, -1);

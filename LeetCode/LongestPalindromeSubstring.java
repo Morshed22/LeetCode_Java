@@ -15,10 +15,10 @@ public class LongestPalindromeSubstring {
         System.out.println(elapsedTime);
     }
 
- //first approach
-    public static  String longestPalindrome(String s) {
+    //first approach
+    public static String longestPalindrome(String s) {
         int size = s.length();
-        if (size == 0 ){
+        if (size == 0) {
             return "";
         }
         boolean table[][] = new boolean[size][size];
@@ -39,8 +39,7 @@ public class LongestPalindromeSubstring {
 
         for (int range = 3; range <= size; ++range) {
 
-            for (int i = 0; i < size - range + 1; ++i)
-            {
+            for (int i = 0; i < size - range + 1; ++i) {
                 int j = i + range - 1;
 
                 if (table[i + 1][j - 1] && s.charAt(i) ==
@@ -54,11 +53,11 @@ public class LongestPalindromeSubstring {
                 }
             }
         }
-        return s.substring(start,start+maxLength);
+        return s.substring(start, start + maxLength);
     }
 
     //second approach with Space complexity O(1)
-    public  static String longestPalSubstr(String str) {
+    public static String longestPalSubstr(String str) {
         int maxLength = 1; // The result (length of LPS)
 
         int start = 0;

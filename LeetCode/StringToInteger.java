@@ -7,7 +7,8 @@ public class StringToInteger {
         ));
 
     }
-    public static  int myAtoi(String str) {
+
+    public static int myAtoi(String str) {
         str = str.trim();
         if (str.isEmpty()) return 0;
         String[] strs = str.split("\\s+");
@@ -20,11 +21,12 @@ public class StringToInteger {
         boolean neg = false;
         if (!Character.isDigit(s1.charAt(0))) {
             if (s1.charAt(0) == '-') neg = true;
-            else if (s1.charAt(0) == '+') { }//do nothing
+            else if (s1.charAt(0) == '+') {
+            }//do nothing
             else return 0;
             i++;
         }
-        for ( ; i < s1.length(); i++) {//skips first char if it is a sign
+        for (; i < s1.length(); i++) {//skips first char if it is a sign
             char c = s1.charAt(i);
             int len = String.valueOf(res).length(), digit = c - '0';
             if (len > maxlen || !Character.isDigit(c)) break;//found non numeric char
@@ -38,7 +40,7 @@ public class StringToInteger {
         } else {
             res = res > Integer.MAX_VALUE ? Integer.MAX_VALUE : res;
         }
-        return (int)res;
+        return (int) res;
 
     }
 }
