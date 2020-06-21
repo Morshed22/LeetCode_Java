@@ -59,14 +59,14 @@ public class NextPermutation {
         for (int i = l; i< nums.length; i++){
             boolean skip = false;
             //for remove duplicates this code has used.
-//            for(int j = l; j<i; j++){
-//
-//                if(nums[i] == nums[j]){
-//                    System.out.println(i);
-//                skip  = true;
-//                break;}
-//            }
-//            if (skip) continue;
+            for(int j = l; j<i; j++){
+
+                if(nums[i] == nums[j]){
+                    System.out.println(i);
+                skip  = true;
+                break;}
+            }
+            if (skip) continue;
             swap(nums, l,i);
             permutationOfList(nums,list,l+1, r);
             swap(nums, l,i);
