@@ -4,47 +4,26 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
 //        String[] strArray = {"flower","flow","flight"};
-        String[] strArray = {"leets", "leetcode", "leetc", "leeds"};
-        longestCommonPrefix3(strArray);
+        String[] strArray = {"",""};
+        System.out.println(longestCommonPrefix(strArray));
     }
 
     public static String longestCommonPrefix(String[] strs) {
-        String comStr = "";
-        if (strs.length == 0) {
-            return comStr;
-        }
-        if (strs.length < 2) {
-            return strs[0];
-        }
-
-        Integer minIndex = 0;
-        Integer minCount = Integer.MAX_VALUE;
-        Boolean isMatch = true;
-
-        for (int i = 0; i < strs.length; i++) {
-            if (strs[i].length() < minCount) {
-                minCount = strs[i].length();
-                minIndex = i;
-            }
-        }
-        String minStr = strs[minIndex];
-        for (int i = 0; i < minStr.length(); i++) {
-            for (int j = 0; j < strs.length; j++) {
-                if (minStr.charAt(i) == strs[j].charAt(i)) {
-                    isMatch = true;
-                } else {
-                    isMatch = false;
-                    break;
-                }
-            }
-            if (isMatch) {
-                comStr += minStr.charAt(i);
-            } else {
-                break;
-            }
-        }
-        return comStr;
-
+       int len = strs.length;
+       if (len == 0) return "";
+       if (len == 1) return strs[0];
+       int lowerSize = Integer.MAX_VALUE;
+       for( String str : strs ){
+           lowerSize = Math.min(lowerSize, str.length());
+       }
+       for(int i = 0; i < lowerSize; i++){
+           for(int j = 1; j < len; j++){
+               if(strs[0].charAt(i) != strs[j].charAt(i)){
+                   return strs[0].substring(0, i);
+               }
+           }
+       }
+       return strs[0].substring(0,lowerSize);
     }
 
 
