@@ -36,6 +36,8 @@ public class RemoveDuplicateFromSortedArray {
                i++;
             }
         }
+        System.out.println(Arrays.toString(nums));
+
         return i;
     }
 
