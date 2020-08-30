@@ -15,7 +15,7 @@ public class ContainerWithMostWater {
         int j = height.length - 1;
 
         while (i != j) {
-            var minheight = Integer.min(height[i], height[j]);
+            int minheight = Integer.min(height[i], height[j]);
             int area = minheight * (j - i);
             if (area > maxArea) {
                 maxArea = area;

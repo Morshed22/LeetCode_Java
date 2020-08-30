@@ -5,7 +5,7 @@ public class StepBYStepSum {
 
     public static int minStartValue(int[] nums) {
         int sum = 0, min_sum = 0;
-        for (var n : nums) {
+        for (int n : nums) {
             sum += n;
             System.out.println(sum);
             System.out.println(min_sum);
